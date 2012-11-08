@@ -1,0 +1,68 @@
+these packages use the obsolete SO_BSDCOMPAT:
+bind
+dietlibc (#define only)
+pidgin
+python
+strace
+syslogd
+
+--- usr/include/asm-arm/socket.h
++++ usr/include/asm-arm/socket.h
+@@ -21,7 +21,6 @@
+ #define SO_NO_CHECK	11
+ #define SO_PRIORITY	12
+ #define SO_LINGER	13
+-#define SO_BSDCOMPAT	14
+ /* To add :#define SO_REUSEPORT 15 */
+ #define SO_PASSCRED	16
+ #define SO_PEERCRED	17
+--- usr/include/asm-generic/socket.h
++++ usr/include/asm-generic/socket.h
+@@ -21,7 +21,6 @@
+ #define SO_NO_CHECK	11
+ #define SO_PRIORITY	12
+ #define SO_LINGER	13
+-#define SO_BSDCOMPAT	14
+ /* To add :#define SO_REUSEPORT 15 */
+ 
+ #ifndef SO_PASSCRED /* powerpc only differs in these */
+--- usr/include/asm-ia64/socket.h
++++ usr/include/asm-ia64/socket.h
+@@ -30,7 +30,6 @@
+ #define SO_NO_CHECK	11
+ #define SO_PRIORITY	12
+ #define SO_LINGER	13
+-#define SO_BSDCOMPAT	14
+ /* To add :#define SO_REUSEPORT 15 */
+ #define SO_PASSCRED	16
+ #define SO_PEERCRED	17
+--- usr/include/asm-parisc/socket.h
++++ usr/include/asm-parisc/socket.h
+@@ -30,7 +30,6 @@
+ 
+ #define SO_NO_CHECK	0x400b
+ #define SO_PRIORITY	0x400c
+-#define SO_BSDCOMPAT	0x400e
+ #define SO_PASSCRED	0x4010
+ #define SO_PEERCRED	0x4011
+ #define SO_TIMESTAMP	0x4012
+--- usr/include/asm-powerpc/socket.h
++++ usr/include/asm-powerpc/socket.h
+@@ -28,7 +28,6 @@
+ #define SO_NO_CHECK	11
+ #define SO_PRIORITY	12
+ #define SO_LINGER	13
+-#define SO_BSDCOMPAT	14
+ /* To add :#define SO_REUSEPORT 15 */
+ #define SO_RCVLOWAT	16
+ #define SO_SNDLOWAT	17
+--- usr/include/asm-s390/socket.h
++++ usr/include/asm-s390/socket.h
+@@ -29,7 +29,6 @@
+ #define SO_NO_CHECK	11
+ #define SO_PRIORITY	12
+ #define SO_LINGER	13
+-#define SO_BSDCOMPAT	14
+ /* To add :#define SO_REUSEPORT 15 */
+ #define SO_PASSCRED	16
+ #define SO_PEERCRED	17
