@@ -1,21 +1,3 @@
-#
-# spec file for package linux-glibc-devel
-#
-# Copyright (c) 2012 SUSE LINUX Products GmbH, Nuernberg, Germany.
-#
-# All modifications and additions to the file contributed by third parties
-# remain the property of their copyright owners, unless otherwise agreed
-# upon. The license for this file, and modifications and additions to the
-# file, is the same license as for the pristine package itself (unless the
-# license for the pristine package is not an Open Source License, in which
-# case the license is the MIT License). An "Open Source License" is a
-# license that conforms to the Open Source Definition (Version 1.9)
-# published by the Open Source Initiative.
-
-# Please submit bugfixes or comments via http://bugs.opensuse.org/
-#
-
-
 BuildRequires:  fdupes
 
 Name:           linux-glibc-devel
@@ -31,7 +13,6 @@ Url:            http://www.kernel.org/
 Group:          Development/Libraries/C and C++
 Source:         %{name}-%{upstream_version}.tar.bz2
 Source1:        install_all.sh
-Patch1:         linux-glibc-devel.SuSE.SO_BSDCOMPAT.patch
 Requires(pre):  coreutils
 Provides:       kernel-headers
 Provides:       linux-kernel-headers = %{version}
@@ -48,7 +29,6 @@ packages, instead.
 
 %prep
 %setup -q -n linux-glibc-devel-%{upstream_version}
-%patch1
 
 %build
 cat > version.h <<-BOGUS
