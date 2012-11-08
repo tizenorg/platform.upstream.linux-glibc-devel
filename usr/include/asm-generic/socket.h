@@ -21,7 +21,6 @@
 #define SO_NO_CHECK	11
 #define SO_PRIORITY	12
 #define SO_LINGER	13
-#define SO_BSDCOMPAT	14
 /* To add :#define SO_REUSEPORT 15 */
 
 #ifndef SO_PASSCRED /* powerpc only differs in these */

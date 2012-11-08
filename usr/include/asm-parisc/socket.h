@@ -30,7 +30,6 @@
 
 #define SO_NO_CHECK	0x400b
 #define SO_PRIORITY	0x400c
-#define SO_BSDCOMPAT	0x400e
 #define SO_PASSCRED	0x4010
 #define SO_PEERCRED	0x4011
 #define SO_TIMESTAMP	0x4012

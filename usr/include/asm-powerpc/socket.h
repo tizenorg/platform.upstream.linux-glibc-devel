@@ -28,7 +28,6 @@
 #define SO_NO_CHECK	11
 #define SO_PRIORITY	12
 #define SO_LINGER	13
-#define SO_BSDCOMPAT	14
 /* To add :#define SO_REUSEPORT 15 */
 #define SO_RCVLOWAT	16
 #define SO_SNDLOWAT	17
