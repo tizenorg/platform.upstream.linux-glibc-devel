@@ -1,4 +1,3 @@
-BuildRequires:  fdupes
 
 Name:           linux-glibc-devel
 # this confusing version number has no meaning, it's the version
@@ -17,8 +16,8 @@ Requires(pre):  coreutils
 Provides:       kernel-headers
 Provides:       linux-kernel-headers = %{version}
 Obsoletes:      linux-kernel-headers < %{version}
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
+BuildRequires:  fdupes
 
 %description
 This package provides Linux kernel headers, the kernel API description
@@ -75,7 +74,7 @@ BOGUS
 cat version.h
 
 %install
-mkdir     %{buildroot}
+mkdir -p    %{buildroot}
 cp -a usr %{buildroot}
 cp -a version.h %{buildroot}/usr/include/linux/
 # Temporarily exclude i2c header files, which are provided by i2c-tools instead
