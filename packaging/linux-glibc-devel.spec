@@ -74,7 +74,6 @@ BOGUS
 cat version.h
 
 %install
-mkdir -p    %{buildroot}
 cp -a usr %{buildroot}
 cp -a version.h %{buildroot}/usr/include/linux/
 # Temporarily exclude i2c header files, which are provided by i2c-tools instead
