@@ -12,6 +12,7 @@ Url:            http://www.kernel.org/
 Group:          Development/Libraries/C and C++
 Source:         %{name}-%{upstream_version}.tar.bz2
 Source1:        install_all.sh
+Source1001: 	linux-glibc-devel.manifest
 Requires(pre):  coreutils
 Provides:       kernel-headers
 Provides:       linux-kernel-headers = %{version}
@@ -28,6 +29,7 @@ packages, instead.
 
 %prep
 %setup -q -n linux-glibc-devel-%{upstream_version}
+cp %{SOURCE1001} .
 
 %build
 cat > version.h <<-BOGUS
@@ -148,6 +150,7 @@ ln -sfn asm-$asm_link usr/include/asm
 exit 0
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_includedir}/*
 %ghost %{_includedir}/asm
