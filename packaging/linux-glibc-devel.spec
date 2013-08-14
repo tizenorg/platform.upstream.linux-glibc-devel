@@ -2,15 +2,14 @@
 Name:           linux-glibc-devel
 # this confusing version number has no meaning, it's the version
 # of the Linux kernel where these headers come from
-Version:        3.4.0
+Version:        3.10
 Release:        0
 License:        GPL-2.0
 Summary:        Linux headers for userspace development
 # A "-" is not allowed in version
-%define upstream_version 3.4
 Url:            http://www.kernel.org/
-Group:          Development/Libraries/C and C++
-Source:         %{name}-%{upstream_version}.tar.bz2
+Group:          Development/Libraries
+Source:         %{name}-%{version}.tar.bz2
 Source1:        install_all.sh
 Source1001: 	linux-glibc-devel.manifest
 Requires(pre):  coreutils
@@ -28,7 +27,7 @@ kernel-(flavor)-devel, or kernel-syms to pull in all kernel-*-devel,
 packages, instead.
 
 %prep
-%setup -q -n linux-glibc-devel-%{upstream_version}
+%setup -q -n linux-glibc-devel-%{version}
 cp %{SOURCE1001} .
 
 %build
