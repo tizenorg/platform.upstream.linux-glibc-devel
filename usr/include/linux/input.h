@@ -1,6 +1,3 @@
-#ifndef _INPUT_H
-#define _INPUT_H
-
 /*
  * Copyright (c) 1999-2002 Vojtech Pavlik
  *
@@ -8,11 +5,15 @@
  * under the terms of the GNU General Public License version 2 as published by
  * the Free Software Foundation.
  */
+#ifndef _INPUT_H
+#define _INPUT_H
+
 
 #include <sys/time.h>
 #include <sys/ioctl.h>
 #include <sys/types.h>
 #include <linux/types.h>
+
 
 /*
  * The event structure itself
@@ -111,6 +112,7 @@ struct input_keymap_entry {
 
 /**
  * EVIOCGMTSLOTS(len) - get MT slot values
+ * @len: size of the data buffer in bytes
  *
  * The ioctl buffer argument should be binary equivalent to
  *
@@ -698,6 +700,11 @@ struct input_keymap_entry {
 #define KEY_CAMERA_LEFT		0x219
 #define KEY_CAMERA_RIGHT	0x21a
 
+#define KEY_ATTENDANT_ON	0x21b
+#define KEY_ATTENDANT_OFF	0x21c
+#define KEY_ATTENDANT_TOGGLE	0x21d	/* Attendant call on or off */
+#define KEY_LIGHTS_TOGGLE	0x21e	/* Reading light on or off */
+
 #define BTN_TRIGGER_HAPPY		0x2c0
 #define BTN_TRIGGER_HAPPY1		0x2c0
 #define BTN_TRIGGER_HAPPY2		0x2c1
@@ -801,13 +808,15 @@ struct input_keymap_entry {
 #define ABS_MT_WIDTH_MAJOR	0x32	/* Major axis of approaching ellipse */
 #define ABS_MT_WIDTH_MINOR	0x33	/* Minor axis (omit if circular) */
 #define ABS_MT_ORIENTATION	0x34	/* Ellipse orientation */
-#define ABS_MT_POSITION_X	0x35	/* Center X ellipse position */
-#define ABS_MT_POSITION_Y	0x36	/* Center Y ellipse position */
+#define ABS_MT_POSITION_X	0x35	/* Center X touch position */
+#define ABS_MT_POSITION_Y	0x36	/* Center Y touch position */
 #define ABS_MT_TOOL_TYPE	0x37	/* Type of touching device */
 #define ABS_MT_BLOB_ID		0x38	/* Group a set of packets as a blob */
 #define ABS_MT_TRACKING_ID	0x39	/* Unique ID of initiated contact */
 #define ABS_MT_PRESSURE		0x3a	/* Pressure on contact area */
 #define ABS_MT_DISTANCE		0x3b	/* Contact hover distance */
+#define ABS_MT_TOOL_X		0x3c	/* Center X tool position */
+#define ABS_MT_TOOL_Y		0x3d	/* Center Y tool position */
 
 
 #define ABS_MAX			0x3f
@@ -845,6 +854,7 @@ struct input_keymap_entry {
 #define MSC_GESTURE		0x02
 #define MSC_RAW			0x03
 #define MSC_SCAN		0x04
+#define MSC_TIMESTAMP		0x05
 #define MSC_MAX			0x07
 #define MSC_CNT			(MSC_MAX+1)
 
@@ -1144,4 +1154,4 @@ struct ff_effect {
 #define FF_MAX		0x7f
 #define FF_CNT		(FF_MAX+1)
 
-#endif
+#endif /* _INPUT_H */

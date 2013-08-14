@@ -10,7 +10,7 @@
 #include <asm/intrinsics.h>
 
 
-static __inline__ __u64 __arch_swab64(__u64 x)
+static __inline__  __u64 __arch_swab64(__u64 x)
 {
 	__u64 result;
 
@@ -19,13 +19,13 @@ static __inline__ __u64 __arch_swab64(__u64 x)
 }
 #define __arch_swab64 __arch_swab64
 
-static __inline__ __u32 __arch_swab32(__u32 x)
+static __inline__  __u32 __arch_swab32(__u32 x)
 {
 	return __arch_swab64(x) >> 32;
 }
 #define __arch_swab32 __arch_swab32
 
-static __inline__ __u16 __arch_swab16(__u16 x)
+static __inline__  __u16 __arch_swab16(__u16 x)
 {
 	return __arch_swab64(x) >> 48;
 }

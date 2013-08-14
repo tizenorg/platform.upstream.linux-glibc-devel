@@ -117,4 +117,4 @@
 			     (level == SP_TRAP_NETBSD) || \
 			     (level == SP_TRAP_LINUX))
 
-#endif /* !(_SPARC_TRAPS_H) */
+#endif /* _SPARC_TRAPS_H */

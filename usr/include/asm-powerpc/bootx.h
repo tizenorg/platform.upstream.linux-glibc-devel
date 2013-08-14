@@ -129,4 +129,4 @@ typedef struct boot_infos
 #pragma options align=reset
 #endif
 
-#endif
+#endif /* __ASM_BOOTX_H__ */

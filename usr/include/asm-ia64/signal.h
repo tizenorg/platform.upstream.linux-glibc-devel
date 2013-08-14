@@ -1,6 +1,3 @@
-#ifndef _ASM_IA64_SIGNAL_H
-#define _ASM_IA64_SIGNAL_H
-
 /*
  * Modified 1998-2001, 2003
  *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
@@ -8,6 +5,9 @@
  * Unfortunately, this file is being included by bits/signal.h in
  * glibc-2.x.  Hence the #ifdef __KERNEL__ ugliness.
  */
+#ifndef _ASM_IA64_SIGNAL_H
+#define _ASM_IA64_SIGNAL_H
+
 
 #define SIGHUP		 1
 #define SIGINT		 2
@@ -77,12 +77,6 @@
 #define SA_ONESHOT	SA_RESETHAND
 
 #define SA_RESTORER	0x04000000
-
-/*
- * sigaltstack controls
- */
-#define SS_ONSTACK	1
-#define SS_DISABLE	2
 
 /*
  * The minimum stack size needs to be fairly large because we want to

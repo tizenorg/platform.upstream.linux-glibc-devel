@@ -1,5 +1,5 @@
 #ifndef _ASM_X86_UNISTD_H
-#define _ASM_X86_UNISTD_H 1
+#define _ASM_X86_UNISTD_H
 
 /* x32 syscall flag bit */
 #define __X32_SYSCALL_BIT	0x40000000

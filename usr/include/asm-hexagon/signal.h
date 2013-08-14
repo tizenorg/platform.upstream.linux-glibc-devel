@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2010-2011, Code Aurora Forum. All rights reserved.
+ * Copyright (c) 2010-2011, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -19,7 +19,11 @@
 #ifndef _ASM_SIGNAL_H
 #define _ASM_SIGNAL_H
 
+#include <uapi/asm/registers.h>
+
 extern unsigned long __rt_sigtramp_template[2];
+
+void do_signal(struct pt_regs *regs);
 
 #include <asm-generic/signal.h>
 

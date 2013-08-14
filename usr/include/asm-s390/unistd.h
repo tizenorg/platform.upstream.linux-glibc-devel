@@ -1,6 +1,4 @@
 /*
- *  include/asm-s390/unistd.h
- *
  *  S390 version
  *
  *  Derived from "include/asm-i386/unistd.h"
@@ -279,7 +277,10 @@
 #define __NR_setns		339
 #define __NR_process_vm_readv	340
 #define __NR_process_vm_writev	341
-#define NR_syscalls 342
+#define __NR_s390_runtime_instr 342
+#define __NR_kcmp		343
+#define __NR_finit_module	344
+#define NR_syscalls 345
 
 /* 
  * There are some system calls that are not present on 64 bit, some

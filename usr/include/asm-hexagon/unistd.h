@@ -1,7 +1,7 @@
 /*
  * Syscall support for Hexagon
  *
- * Copyright (c) 2010-2011, Code Aurora Forum. All rights reserved.
+ * Copyright (c) 2010-2011, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -18,9 +18,6 @@
  * 02110-1301, USA.
  */
 
-#if !defined(_ASM_HEXAGON_UNISTD_H) || defined(__SYSCALL)
-#define _ASM_HEXAGON_UNISTD_H
-
 /*
  *  The kernel pulls this unistd.h in three different ways:
  *  1.  the "normal" way which gets all the __NR defines
@@ -30,7 +27,9 @@
  */
 
 #define sys_mmap2 sys_mmap_pgoff
+#define __ARCH_WANT_SYS_EXECVE
+#define __ARCH_WANT_SYS_CLONE
+#define __ARCH_WANT_SYS_VFORK
+#define __ARCH_WANT_SYS_FORK
 
 #include <asm-generic/unistd.h>
-
-#endif

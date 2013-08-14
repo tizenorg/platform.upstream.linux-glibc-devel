@@ -1,6 +1,3 @@
-#ifndef _ASM_IA64_PTRACE_H
-#define _ASM_IA64_PTRACE_H
-
 /*
  * Copyright (C) 1998-2004 Hewlett-Packard Co
  *	David Mosberger-Tang <davidm@hpl.hp.com>
@@ -15,6 +12,9 @@
  *  6/17/99	D. Mosberger	added second unat member to "struct switch_stack"
  *
  */
+#ifndef _ASM_IA64_PTRACE_H
+#define _ASM_IA64_PTRACE_H
+
 /*
  * When a user process is blocked, its state looks as follows:
  *

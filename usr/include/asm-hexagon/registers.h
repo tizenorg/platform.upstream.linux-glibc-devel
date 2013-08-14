@@ -1,22 +1,7 @@
 /*
  * Register definitions for the Hexagon architecture
- *
- * Copyright (c) 2010-2011, Code Aurora Forum. All rights reserved.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 and
- * only version 2 as published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
- * 02110-1301, USA.
  */
+
 
 #ifndef _ASM_REGISTERS_H
 #define _ASM_REGISTERS_H
@@ -72,10 +57,17 @@ struct pt_regs {
 	};
 	union {
 		struct {
-			unsigned long gp;
 			unsigned long ugp;
+			unsigned long gp;
 		};
-		long long int ugpgp;
+		long long int gpugp;
+	};
+	union {
+		struct {
+			unsigned long cs0;
+			unsigned long cs1;
+		};
+		long long int cs1cs0;
 	};
 	/*
 	* Be extremely careful with rearranging these, if at all.  Some code
@@ -219,9 +211,11 @@ struct pt_regs {
 #define pt_psp(regs) ((regs)->hvmer.vmpsp)
 #define pt_badva(regs) ((regs)->hvmer.vmbadva)
 
+#define pt_set_singlestep(regs) ((regs)->hvmer.vmest |= (1<<HVM_VMEST_SS_SFT))
+#define pt_clr_singlestep(regs) ((regs)->hvmer.vmest &= ~(1<<HVM_VMEST_SS_SFT))
+
 #define pt_set_rte_sp(regs, sp) do {\
-	pt_psp(regs) = (sp);\
-	(regs)->SP = (unsigned long) &((regs)->hvmer);\
+	pt_psp(regs) = (regs)->SP = (sp);\
 	} while (0)
 
 #define pt_set_kmode(regs) \

@@ -1,12 +1,12 @@
-#ifndef _ASM_IA64_INTRINSICS_H
-#define _ASM_IA64_INTRINSICS_H
-
 /*
  * Compiler-dependent intrinsics.
  *
  * Copyright (C) 2002-2003 Hewlett-Packard Co
  *	David Mosberger-Tang <davidm@hpl.hp.com>
  */
+#ifndef _ASM_IA64_INTRINSICS_H
+#define _ASM_IA64_INTRINSICS_H
+
 
 #ifndef __ASSEMBLY__
 

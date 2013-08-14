@@ -349,4 +349,4 @@ struct sparc_stackf {
 #define PTRACE_GETFPREGS64	  25
 #define PTRACE_SETFPREGS64	  26
 
-#endif /* !(__SPARC_PTRACE_H) */
+#endif /* __SPARC_PTRACE_H */

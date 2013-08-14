@@ -1,6 +1,3 @@
-#ifndef _ASM_IA64_PARAM_H
-#define _ASM_IA64_PARAM_H
-
 /*
  * Fundamental kernel parameters.
  *
@@ -9,6 +6,9 @@
  * Modified 1998, 1999, 2002-2003
  *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
  */
+#ifndef _ASM_IA64_PARAM_H
+#define _ASM_IA64_PARAM_H
+
 
 #define EXEC_PAGESIZE	65536
 

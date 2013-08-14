@@ -1,9 +1,9 @@
-#ifndef _PARISC_PTRACE_H
-#define _PARISC_PTRACE_H
-
 /* written by Philipp Rumpf, Copyright (C) 1999 SuSE GmbH Nuernberg
 ** Copyright (C) 2000 Grant Grundler, Hewlett-Packard
 */
+#ifndef _PARISC_PTRACE_H
+#define _PARISC_PTRACE_H
+
 
 #include <linux/types.h>
 
@@ -44,4 +44,4 @@ struct pt_regs {
 #define PTRACE_SINGLEBLOCK	12	/* resume execution until next branch */
 
 
-#endif
+#endif /* _PARISC_PTRACE_H */

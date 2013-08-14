@@ -1,8 +1,6 @@
 /*
- *  include/asm-s390/ptrace.h
- *
  *  S390 version
- *    Copyright (C) 1999,2000 IBM Deutschland Entwicklung GmbH, IBM Corporation
+ *    Copyright IBM Corp. 1999, 2000
  *    Author(s): Denis Joseph Barrow (djbarrow@de.ibm.com,barrow_dj@yahoo.com)
  */
 
@@ -217,12 +215,6 @@ typedef struct
         unsigned long addr;
 } __attribute__ ((aligned(8))) psw_t;
 
-typedef struct
-{
-	__u32	mask;
-	__u32	addr;
-} __attribute__ ((aligned(8))) psw_compat_t;
-
 #ifndef __s390x__
 
 #define PSW_MASK_PER		0x40000000UL
@@ -237,10 +229,11 @@ typedef struct
 #define PSW_MASK_ASC		0x0000C000UL
 #define PSW_MASK_CC		0x00003000UL
 #define PSW_MASK_PM		0x00000F00UL
+#define PSW_MASK_RI		0x00000000UL
 #define PSW_MASK_EA		0x00000000UL
 #define PSW_MASK_BA		0x00000000UL
 
-#define PSW_MASK_USER		0x00003F00UL
+#define PSW_MASK_USER		0x0000FF00UL
 
 #define PSW_ADDR_AMODE		0x80000000UL
 #define PSW_ADDR_INSN		0x7FFFFFFFUL
@@ -266,10 +259,11 @@ typedef struct
 #define PSW_MASK_ASC		0x0000C00000000000UL
 #define PSW_MASK_CC		0x0000300000000000UL
 #define PSW_MASK_PM		0x00000F0000000000UL
+#define PSW_MASK_RI		0x0000008000000000UL
 #define PSW_MASK_EA		0x0000000100000000UL
 #define PSW_MASK_BA		0x0000000080000000UL
 
-#define PSW_MASK_USER		0x00003F0180000000UL
+#define PSW_MASK_USER		0x0000FF8180000000UL
 
 #define PSW_ADDR_AMODE		0x0000000000000000UL
 #define PSW_ADDR_INSN		0xFFFFFFFFFFFFFFFFUL
@@ -294,20 +288,6 @@ typedef struct
 	unsigned int  acrs[NUM_ACRS];
 	unsigned long orig_gpr2;
 } s390_regs;
-
-typedef struct
-{
-	psw_compat_t	psw;
-	__u32		gprs[NUM_GPRS];
-	__u32		acrs[NUM_ACRS];
-	__u32		orig_gpr2;
-} s390_compat_regs;
-
-typedef struct
-{
-	__u32		gprs_high[NUM_GPRS];
-} s390_compat_regs_high;
-
 
 /*
  * Now for the user space program event recording (trace) definitions.
@@ -418,6 +398,8 @@ typedef struct
 #define PTRACE_GET_LAST_BREAK	      0x5006
 #define PTRACE_PEEK_SYSTEM_CALL       0x5007
 #define PTRACE_POKE_SYSTEM_CALL	      0x5008
+#define PTRACE_ENABLE_TE	      0x5009
+#define PTRACE_DISABLE_TE	      0x5010
 
 /*
  * PT_PROT definition is loosely based on hppa bsd definition in

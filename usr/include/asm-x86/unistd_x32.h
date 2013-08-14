@@ -47,8 +47,6 @@
 #define __NR_getsockname (__X32_SYSCALL_BIT + 51)
 #define __NR_getpeername (__X32_SYSCALL_BIT + 52)
 #define __NR_socketpair (__X32_SYSCALL_BIT + 53)
-#define __NR_setsockopt (__X32_SYSCALL_BIT + 54)
-#define __NR_getsockopt (__X32_SYSCALL_BIT + 55)
 #define __NR_clone (__X32_SYSCALL_BIT + 56)
 #define __NR_fork (__X32_SYSCALL_BIT + 57)
 #define __NR_vfork (__X32_SYSCALL_BIT + 58)
@@ -273,6 +271,8 @@
 #define __NR_syncfs (__X32_SYSCALL_BIT + 306)
 #define __NR_setns (__X32_SYSCALL_BIT + 308)
 #define __NR_getcpu (__X32_SYSCALL_BIT + 309)
+#define __NR_kcmp (__X32_SYSCALL_BIT + 312)
+#define __NR_finit_module (__X32_SYSCALL_BIT + 313)
 #define __NR_rt_sigaction (__X32_SYSCALL_BIT + 512)
 #define __NR_rt_sigreturn (__X32_SYSCALL_BIT + 513)
 #define __NR_ioctl (__X32_SYSCALL_BIT + 514)
@@ -302,5 +302,7 @@
 #define __NR_sendmmsg (__X32_SYSCALL_BIT + 538)
 #define __NR_process_vm_readv (__X32_SYSCALL_BIT + 539)
 #define __NR_process_vm_writev (__X32_SYSCALL_BIT + 540)
+#define __NR_setsockopt (__X32_SYSCALL_BIT + 541)
+#define __NR_getsockopt (__X32_SYSCALL_BIT + 542)
 
 #endif /* _ASM_X86_UNISTD_X32_H */

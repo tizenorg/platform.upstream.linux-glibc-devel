@@ -1,12 +1,12 @@
-#ifndef _ASM_IA64_TERMIOS_H
-#define _ASM_IA64_TERMIOS_H
-
 /*
  * Modified 1999
  *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
  *
  * 99/01/28	Added N_IRDA and N_SMSBLOCK
  */
+#ifndef _ASM_IA64_TERMIOS_H
+#define _ASM_IA64_TERMIOS_H
+
 
 #include <asm/termbits.h>
 #include <asm/ioctls.h>

@@ -54,10 +54,6 @@ enum perfctr_opcode {
 	PERFCTR_GETPCR
 };
 
-/* I don't want the kernel's namespace to be polluted with this
- * stuff when this file is included.  --DaveM
- */
-
 #define  PRIV 0x00000001
 #define  SYS  0x00000002
 #define  USR  0x00000004
@@ -166,6 +162,5 @@ struct vcounter_struct {
   unsigned long long vcnt0;
   unsigned long long vcnt1;
 };
-
 
 #endif /* !(PERF_COUNTER_API) */

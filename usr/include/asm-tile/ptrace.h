@@ -39,6 +39,7 @@
 #endif
 #define PTREGS_SIZE             PTREGS_OFFSET_REG(64)
 
+
 #ifndef __ASSEMBLY__
 
 /* Provide appropriate length type to userspace regardless of -m32/-m64. */
@@ -78,8 +79,14 @@ struct pt_regs {
 #define PTRACE_SETFPREGS	15
 
 /* Support TILE-specific ptrace options, with events starting at 16. */
-#define PTRACE_O_TRACEMIGRATE	0x00010000
 #define PTRACE_EVENT_MIGRATE	16
+#define PTRACE_O_TRACEMIGRATE	(1 << PTRACE_EVENT_MIGRATE)
 
+/*
+ * Flag bits in pt_regs.flags that are part of the ptrace API.
+ * We start our numbering higher up to avoid confusion with the
+ * non-ABI kernel-internal values that use the low 16 bits.
+ */
+#define PT_FLAGS_COMPAT		0x10000  /* process is an -m32 compat process */
 
 #endif /* _ASM_TILE_PTRACE_H */

@@ -1,6 +1,4 @@
 /*
- *  include/asm-s390/types.h
- *
  *  S390 version
  *
  *  Derived from "include/asm-i386/types.h"
@@ -21,7 +19,4 @@ typedef __signed__ long saddr_t;
 
 #endif /* __ASSEMBLY__ */
 
-/*
- * These aren't exported outside the kernel to avoid name space clashes
- */
 #endif /* _S390_TYPES_H */

@@ -48,4 +48,4 @@ struct spu_proxydma_info {
 	struct mfc_cq_sr proxydma_info_command_data[8];
 };
 
-#endif
+#endif /* _SPU_INFO_H */

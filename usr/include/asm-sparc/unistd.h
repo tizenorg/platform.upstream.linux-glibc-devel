@@ -1,6 +1,3 @@
-#ifndef _SPARC_UNISTD_H
-#define _SPARC_UNISTD_H
-
 /*
  * System calls under the Sparc.
  *
@@ -14,6 +11,9 @@
  *
  * Copyright (C) 1995 Adrian M. Rodriguez (adrian@remus.rutgers.edu)
  */
+#ifndef _SPARC_UNISTD_H
+#define _SPARC_UNISTD_H
+
 #ifndef __32bit_syscall_numbers__
 #ifndef __arch64__
 #define __32bit_syscall_numbers__
@@ -405,8 +405,14 @@
 #define __NR_setns		337
 #define __NR_process_vm_readv	338
 #define __NR_process_vm_writev	339
+#define __NR_kern_features	340
+#define __NR_kcmp		341
+#define __NR_finit_module	342
 
-#define NR_syscalls		340
+#define NR_syscalls		343
+
+/* Bitmask values returned from kern_features system call.  */
+#define KERN_FEATURE_MIXED_MODE_STACK	0x00000001
 
 #ifdef __32bit_syscall_numbers__
 /* Sparc 32-bit only has the "setresuid32", "getresuid32" variants,

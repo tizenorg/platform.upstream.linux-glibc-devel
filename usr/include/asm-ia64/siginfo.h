@@ -1,12 +1,12 @@
-#ifndef _ASM_IA64_SIGINFO_H
-#define _ASM_IA64_SIGINFO_H
-
 /*
  * Based on <asm-i386/siginfo.h>.
  *
  * Modified 1998-2002
  *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
  */
+#ifndef _ASM_IA64_SIGINFO_H
+#define _ASM_IA64_SIGINFO_H
+
 
 #define __ARCH_SI_PREAMBLE_SIZE	(4 * sizeof(int))
 

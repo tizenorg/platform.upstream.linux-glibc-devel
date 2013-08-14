@@ -1,6 +1,3 @@
-#ifndef _ASM_IA64_TYPES_H
-#define _ASM_IA64_TYPES_H
-
 /*
  * This file is never included by application software unless explicitly
  * requested (e.g., via linux/types.h) in which case the application is
@@ -13,6 +10,9 @@
  * Modified 1998-2000, 2002
  *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
  */
+#ifndef _ASM_IA64_TYPES_H
+#define _ASM_IA64_TYPES_H
+
 
 #include <asm-generic/int-l64.h>
 
@@ -24,9 +24,6 @@
 # define __IA64_UL(x)		((unsigned long)(x))
 # define __IA64_UL_CONST(x)	x##UL
 
-/*
- * These aren't exported outside the kernel to avoid name space clashes
- */
 #endif /* !__ASSEMBLY__ */
 
 #endif /* _ASM_IA64_TYPES_H */

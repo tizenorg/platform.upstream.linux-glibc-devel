@@ -80,4 +80,4 @@ struct compat_statfs64 {
 	__u32 f_spare[4];
 } ARCH_PACK_COMPAT_STATFS64;
 
-#endif
+#endif /* _GENERIC_STATFS_H */

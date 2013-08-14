@@ -9,13 +9,13 @@
 #ifndef _ASM_C6X_SWAB_H
 #define _ASM_C6X_SWAB_H
 
-static __inline__ __u16 __c6x_swab16(__u16 val)
+static __inline__  __u16 __c6x_swab16(__u16 val)
 {
 	__asm__("swap4 .l1 %0,%0\n" : "+a"(val));
 	return val;
 }
 
-static __inline__ __u32 __c6x_swab32(__u32 val)
+static __inline__  __u32 __c6x_swab32(__u32 val)
 {
 	__asm__("swap4 .l1 %0,%0\n"
 	    "swap2 .l1 %0,%0\n"
@@ -23,7 +23,7 @@ static __inline__ __u32 __c6x_swab32(__u32 val)
 	return val;
 }
 
-static __inline__ __u64 __c6x_swab64(__u64 val)
+static __inline__  __u64 __c6x_swab64(__u64 val)
 {
 	__asm__("   swap2 .s1 %p0,%P0\n"
 	    "|| swap2 .l1 %P0,%p0\n"
@@ -33,13 +33,13 @@ static __inline__ __u64 __c6x_swab64(__u64 val)
 	return val;
 }
 
-static __inline__ __u32 __c6x_swahw32(__u32 val)
+static __inline__  __u32 __c6x_swahw32(__u32 val)
 {
 	__asm__("swap2 .l1 %0,%0\n" : "+a"(val));
 	return val;
 }
 
-static __inline__ __u32 __c6x_swahb32(__u32 val)
+static __inline__  __u32 __c6x_swahb32(__u32 val)
 {
 	__asm__("swap4 .l1 %0,%0\n" : "+a"(val));
 	return val;

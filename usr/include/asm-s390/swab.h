@@ -2,10 +2,8 @@
 #define _S390_SWAB_H
 
 /*
- *  include/asm-s390/swab.h
- *
  *  S390 version
- *    Copyright (C) 1999 IBM Deutschland Entwicklung GmbH, IBM Corporation
+ *    Copyright IBM Corp. 1999
  *    Author(s): Martin Schwidefsky (schwidefsky@de.ibm.com)
  */
 
@@ -20,7 +18,7 @@ static __inline__ __u64 __arch_swab64p(const __u64 *x)
 {
 	__u64 result;
 
-	__asm__ __volatile__("lrvg %0,%1" : "=d" (result) : "m" (*x));
+	__asm__ volatile("lrvg %0,%1" : "=d" (result) : "m" (*x));
 	return result;
 }
 #define __arch_swab64p __arch_swab64p
@@ -29,7 +27,7 @@ static __inline__ __u64 __arch_swab64(__u64 x)
 {
 	__u64 result;
 
-	__asm__ __volatile__("lrvgr %0,%1" : "=d" (result) : "d" (x));
+	__asm__ volatile("lrvgr %0,%1" : "=d" (result) : "d" (x));
 	return result;
 }
 #define __arch_swab64 __arch_swab64
@@ -45,7 +43,7 @@ static __inline__ __u32 __arch_swab32p(const __u32 *x)
 {
 	__u32 result;
 	
-	__asm__ __volatile__(
+	__asm__ volatile(
 #ifndef __s390x__
 		"	icm	%0,8,%O1+3(%R1)\n"
 		"	icm	%0,4,%O1+2(%R1)\n"
@@ -65,7 +63,7 @@ static __inline__ __u32 __arch_swab32(__u32 x)
 {
 	__u32 result;
 	
-	__asm__ __volatile__("lrvr  %0,%1" : "=d" (result) : "d" (x));
+	__asm__ volatile("lrvr  %0,%1" : "=d" (result) : "d" (x));
 	return result;
 }
 #define __arch_swab32 __arch_swab32
@@ -75,7 +73,7 @@ static __inline__ __u16 __arch_swab16p(const __u16 *x)
 {
 	__u16 result;
 	
-	__asm__ __volatile__(
+	__asm__ volatile(
 #ifndef __s390x__
 		"	icm	%0,2,%O1+1(%R1)\n"
 		"	ic	%0,%1\n"

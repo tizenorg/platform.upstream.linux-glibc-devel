@@ -1,6 +1,4 @@
 /*
- *  include/asm-s390/termios.h
- *
  *  S390 version
  *
  *  Derived from "include/asm-i386/termios.h"
@@ -48,4 +46,4 @@ struct termio {
 /* ioctl (fd, TIOCSERGETLSR, &result) where result may be as below */
 
 
-#endif	/* _S390_TERMIOS_H */
+#endif /* _S390_TERMIOS_H */

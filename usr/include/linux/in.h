@@ -250,4 +250,4 @@ struct sockaddr_in {
 #include <asm/byteorder.h> 
 
 
-#endif	/* _LINUX_IN_H */
+#endif /* _LINUX_IN_H */

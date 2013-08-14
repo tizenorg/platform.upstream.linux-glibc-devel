@@ -1,5 +1,4 @@
-#ifndef __SPARC_SIGCONTEXT_H
-#define __SPARC_SIGCONTEXT_H
-
-
-#endif /* !(__SPARC_SIGCONTEXT_H) */
+/*
+ * There isn't anything here anymore, but the file must not be empty or patch
+ * will delete it.
+ */

@@ -1,6 +1,4 @@
 /*
- *  include/asm-s390/signal.h
- *
  *  S390 version
  *
  *  Derived from "include/asm-i386/signal.h"
@@ -90,12 +88,6 @@ typedef unsigned long sigset_t;
 
 #define SA_RESTORER     0x04000000
 
-/*
- * sigaltstack controls
- */
-#define SS_ONSTACK      1
-#define SS_DISABLE      2
-
 #define MINSIGSTKSZ     2048
 #define SIGSTKSZ        8192
 
@@ -130,4 +122,4 @@ typedef struct sigaltstack {
 } stack_t;
 
 
-#endif
+#endif /* _ASMS390_SIGNAL_H */

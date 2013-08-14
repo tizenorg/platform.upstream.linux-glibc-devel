@@ -253,4 +253,4 @@ struct ktermios {
 #define	TCSADRAIN	1
 #define	TCSAFLUSH	2
 
-#endif /* !(_SPARC_TERMBITS_H) */
+#endif /* _SPARC_TERMBITS_H */
