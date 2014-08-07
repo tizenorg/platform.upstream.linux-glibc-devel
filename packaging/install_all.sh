@@ -37,6 +37,7 @@ sed -i -e 's/cris/cris\|unicore32/' scripts/headers.sh
 popd
 pushd "$header_dir"
 for asm in \
+	arm64 \
 	alpha \
 	avr32 \
 	blackfin \

@@ -109,10 +109,11 @@ case "$(uname -m)" in
 	s390*)   asm_link=s390       ;;
 	ia64)    asm_link=ia64       ;;
 	*arm*)   asm_link=arm        ;;
+	*aarch64*)  asm_link=arm64   ;;
 	parisc)  asm_link=parisc     ;;
 	*mips*)  asm_link=mips       ;;
 	sparc*)  asm_link=sparc      ;;
-	*)       asm_link=x86  ;;
+	*)       asm_link=x86    ;;
 esac
 if test -L usr/include/asm
 then
@@ -140,10 +141,11 @@ case "$(uname -m)" in
 	s390*)   asm_link=s390       ;;
 	ia64)    asm_link=ia64       ;;
 	*arm*)   asm_link=arm        ;;
+	*aarch64*) asm_link=arm64    ;;
 	parisc)  asm_link=parisc     ;;
 	*mips*)  asm_link=mips       ;;
 	sparc*)  asm_link=sparc      ;;
-	*)       asm_link=x86  ;;
+	*)       asm_link=x86    ;;
 esac
 ln -sfn asm-$asm_link usr/include/asm
 exit 0
