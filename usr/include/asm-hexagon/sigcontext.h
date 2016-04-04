@@ -26,7 +26,7 @@
  * before the signal handler was invoked.  Note: only add new entries
  * to the end of the structure.
  */
-struct sigcontext {
+__attribute__ ((visibility ("default"))) struct sigcontext {
 	struct user_regs_struct sc_regs;
 } __aligned(8);
 

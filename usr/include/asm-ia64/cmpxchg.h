@@ -24,7 +24,7 @@
  * This function doesn't exist, so you'll get a linker error if
  * something tries to do an invalid xchg().
  */
-extern void ia64_xchg_called_with_bad_pointer(void);
+__attribute__ ((visibility ("default"))) extern void ia64_xchg_called_with_bad_pointer(void);
 
 #define __xchg(x, ptr, size)						\
 ({									\
@@ -67,7 +67,7 @@ extern void ia64_xchg_called_with_bad_pointer(void);
  * This function doesn't exist, so you'll get a linker error
  * if something tries to do an invalid cmpxchg().
  */
-extern long ia64_cmpxchg_called_with_bad_pointer(void);
+__attribute__ ((visibility ("default"))) extern long ia64_cmpxchg_called_with_bad_pointer(void);
 
 #define ia64_cmpxchg(sem, ptr, old, new, size)				\
 ({									\

@@ -26,8 +26,8 @@
 
 #define ia64_loadrs() __asm__ volatile ("loadrs;;":::"memory")
 
-extern void ia64_bad_param_for_setreg (void);
-extern void ia64_bad_param_for_getreg (void);
+__attribute__ ((visibility ("default"))) extern void ia64_bad_param_for_setreg (void);
+__attribute__ ((visibility ("default"))) extern void ia64_bad_param_for_getreg (void);
 
 
 #define ia64_native_setreg(regnum, val)						\

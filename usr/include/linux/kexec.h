@@ -46,7 +46,7 @@ struct kexec_segment {
  * consisting of passed number of segments at the entry-point address.
  * The flags allow different useage types.
  */
-extern int kexec_load(void *, size_t, struct kexec_segment *,
+__attribute__ ((visibility ("default"))) extern int kexec_load(void *, size_t, struct kexec_segment *,
 		unsigned long int);
 
 #endif /* LINUX_KEXEC_H */

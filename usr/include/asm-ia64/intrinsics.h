@@ -35,8 +35,8 @@ do {									\
  * Force an unresolved reference if someone tries to use
  * ia64_fetch_and_add() with a bad value.
  */
-extern unsigned long __bad_size_for_ia64_fetch_and_add (void);
-extern unsigned long __bad_increment_for_ia64_fetch_and_add (void);
+__attribute__ ((visibility ("default"))) extern unsigned long __bad_size_for_ia64_fetch_and_add (void);
+__attribute__ ((visibility ("default"))) extern unsigned long __bad_increment_for_ia64_fetch_and_add (void);
 
 #define IA64_FETCHADD(tmp,v,n,sz,sem)						\
 ({										\

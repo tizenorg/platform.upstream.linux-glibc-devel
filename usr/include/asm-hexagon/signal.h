@@ -21,9 +21,9 @@
 
 #include <uapi/asm/registers.h>
 
-extern unsigned long __rt_sigtramp_template[2];
+__attribute__ ((visibility ("default"))) extern unsigned long __rt_sigtramp_template[2];
 
-void do_signal(struct pt_regs *regs);
+__attribute__ ((visibility ("default"))) void do_signal(struct pt_regs *regs);
 
 #include <asm-generic/signal.h>
 

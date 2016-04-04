@@ -257,7 +257,7 @@
 #define TANKMEMADDRREG_WRITE	 0x00200000	/* Write to tank memory				*/
 #define TANKMEMADDRREG_READ	 0x00100000	/* Read from tank memory			*/
 
-struct snd_emu10k1_fx8010_info {
+struct __attribute__ ((visibility ("default"))) snd_emu10k1_fx8010_info {
 	unsigned int internal_tram_size;	/* in samples */
 	unsigned int external_tram_size;	/* in samples */
 	char fxbus_names[16][32];		/* names of FXBUSes */
@@ -272,7 +272,7 @@ struct snd_emu10k1_fx8010_info {
 #define EMU10K1_GPR_TRANSLATION_TREBLE		3
 #define EMU10K1_GPR_TRANSLATION_ONOFF		4
 
-struct snd_emu10k1_fx8010_control_gpr {
+struct __attribute__ ((visibility ("default"))) snd_emu10k1_fx8010_control_gpr {
 	struct snd_ctl_elem_id id;		/* full control ID definition */
 	unsigned int vcount;		/* visible count */
 	unsigned int count;		/* count of GPR (1..16) */
@@ -285,7 +285,7 @@ struct snd_emu10k1_fx8010_control_gpr {
 };
 
 /* old ABI without TLV support */
-struct snd_emu10k1_fx8010_control_old_gpr {
+struct __attribute__ ((visibility ("default"))) snd_emu10k1_fx8010_control_old_gpr {
 	struct snd_ctl_elem_id id;
 	unsigned int vcount;
 	unsigned int count;
@@ -296,7 +296,7 @@ struct snd_emu10k1_fx8010_control_old_gpr {
 	unsigned int translation;
 };
 
-struct snd_emu10k1_fx8010_code {
+struct __attribute__ ((visibility ("default"))) snd_emu10k1_fx8010_code {
 	char name[128];
 
 	DECLARE_BITMAP(gpr_valid, 0x200); /* bitmask of valid initializers */
@@ -320,14 +320,14 @@ struct snd_emu10k1_fx8010_code {
 	__u32 *code;		  /* one instruction - 64 bits */
 };
 
-struct snd_emu10k1_fx8010_tram {
+struct __attribute__ ((visibility ("default"))) snd_emu10k1_fx8010_tram {
 	unsigned int address;		/* 31.bit == 1 -> external TRAM */
 	unsigned int size;		/* size in samples (4 bytes) */
 	unsigned int *samples;		/* pointer to samples (20-bit) */
 					/* NULL->clear memory */
 };
 
-struct snd_emu10k1_fx8010_pcm_rec {
+struct __attribute__ ((visibility ("default"))) snd_emu10k1_fx8010_pcm_rec {
 	unsigned int substream;		/* substream number */
 	unsigned int res1;		/* reserved */
 	unsigned int channels;		/* 16-bit channels count, zero = remove this substream */

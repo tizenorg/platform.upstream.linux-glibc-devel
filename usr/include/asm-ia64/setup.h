@@ -3,7 +3,7 @@
 
 #define COMMAND_LINE_SIZE	2048
 
-extern struct ia64_boot_param {
+__attribute__ ((visibility ("default"))) extern struct ia64_boot_param {
 	__u64 command_line;		/* physical address of command line arguments */
 	__u64 efi_systab;		/* physical address of EFI system table */
 	__u64 efi_memmap;		/* physical address of EFI memory map */

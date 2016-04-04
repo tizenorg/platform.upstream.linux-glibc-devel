@@ -22,8 +22,8 @@
 #include <linux/init.h>
 #include <asm-generic/setup.h>
 
-extern char external_cmdline_buffer;
+__attribute__ ((visibility ("default"))) extern char external_cmdline_buffer;
 
-void __init setup_arch_memory(void);
+__attribute__ ((visibility ("default"))) void __init setup_arch_memory(void);
 
 #endif
