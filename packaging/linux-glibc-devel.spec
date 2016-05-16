@@ -78,9 +78,9 @@ cat version.h
 cp -a usr %{buildroot}
 cp -a version.h %{buildroot}/usr/include/linux/
 # Temporarily exclude i2c header files, which are provided by i2c-tools instead
-rm -fv   %{buildroot}/usr/include/linux/i2c-dev.h
+#rm -fv   %{buildroot}/usr/include/linux/i2c-dev.h
 # resolve file conflict with glibc for now
-rm -fv   %{buildroot}//usr/include/scsi/scsi*
+#rm -fv   %{buildroot}//usr/include/scsi/scsi*
 # Replace the directory /usr/include/asm with a symlink.
 # libc contained a symlink /usr/include/asm into kernel-source up to 7.0 (2.1.3)
 # glibc-devel contained a symlink /usr/include/asm into kernel-source in 7.1 (2.2)

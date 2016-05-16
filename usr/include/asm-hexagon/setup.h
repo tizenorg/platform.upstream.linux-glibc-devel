@@ -19,7 +19,8 @@
 #ifndef _ASM_SETUP_H
 #define _ASM_SETUP_H
 
-#include <linux/init.h>
+#define __init
+
 #include <asm-generic/setup.h>
 
 extern char external_cmdline_buffer;
