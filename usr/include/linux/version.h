@@ -1,2 +1,37 @@
-#define LINUX_VERSION_CODE 199168
+#ifdef __KERNEL__
+#error "======================================================="
+#error "You should not include /usr/include/{linux,asm}/ header"
+#error "files directly for the compilation of kernel modules."
+#error ""
+#error "glibc now uses kernel header files from a well-defined"
+#error "working kernel version (as recommended by Linus Torvalds)"
+#error "These files are glibc internal and may not match the"
+#error "currently running kernel. They should only be"
+#error "included via other system header files - user space"
+#error "programs should not directly include <linux/*.h> or"
+#error "<asm/*.h> as well."
+#error ""
+#error "Since Linux 2.6, the kernel module build process has been"
+#error "updated such that users building modules should not typically"
+#error "need to specify additional include directories at all."
+#error ""
+#error "To build kernel modules, ensure you have the build environment "
+#error "available either via the kernel-devel and kernel-<flavor>-devel "
+#error "packages or a properly configured kernel source tree."
+#error ""
+#error "Then, modules can be built using:"
+#error "make -C <path> M=/home/abuild/rpmbuild/BUILD/linux-glibc-devel-4.1"
+#error ""
+#error "For the currently running kernel there will be a symbolic "
+#error "link pointing to the build environment located at "
+#error "/lib/modules/3.19.2-0-guest/build for use as <path>."
+#error ""
+#error "If you are seeing this message, your environment is "
+#error "not configured properly. "
+#error ""
+#error "Please adjust the Makefile accordingly."
+#error "======================================================="
+#else
+#define LINUX_VERSION_CODE 262400
 #define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))
+#endif
