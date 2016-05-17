@@ -2,7 +2,7 @@
 Name:           linux-glibc-devel
 # this confusing version number has no meaning, it's the version
 # of the Linux kernel where these headers come from
-Version:        3.10
+Version:        4.1
 Release:        0
 License:        GPL-2.0
 Summary:        Linux headers for userspace development
